@@ -50,6 +50,8 @@ ui <- dashboardPage(
 server <- function(input, output) {
   general_info <- reactive({get_general_info(input$game_id)})
   
+  print(general_info)
+  
   output$game_info <- renderUI({
           tags$div(
             tags$h1(tags$img(src = general_info()$logo_link),
